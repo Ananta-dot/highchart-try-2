@@ -1,26 +1,69 @@
-.App {
-  text-align: center;
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f6f8;
 }
 
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-grow: 1; /* Ensures the footer is pushed to the bottom */
 }
 
+/* Paper/Card Styles */
+.MuiPaper-root {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+}
+
+.MuiPaper-root:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+/* Search Bar Focus Style */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #3f51b5 !important;
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2);
+}
+
+/* Chart Container Styles */
 .chart-container {
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 20px;
-  height: 500px; 
+  width: 100%;
+  height: 65vh;
+  min-height: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* Hide Highcharts credits */
+.highcharts-credits {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .chart-container {
+    height: 50vh;
+    min-height: 400px;
+    padding: 12px;
+  }
 }
